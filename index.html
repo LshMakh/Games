@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +8,22 @@
     <link rel="stylesheet" href="style.css">
     <script src="mole.js"></script>
 </head>
+
 <body>
 
     <h1>Whack a Mole</h1>
     <h2 id="score">0</h2>
-    
     <div id="board"></div>
-    
+
+    <div id="difficulty">
+        <h2>Change Difficulty</h2>
+        <div class="btn-cont">
+            <button onclick="setDifficulty(2000)">Easy</button>
+            <button onclick="setDifficulty(500)">Medium</button>
+            <button onclick="setDifficulty(250)">Hard</button>
+        </div>
+    </div>
+
 </body>
+
 </html>

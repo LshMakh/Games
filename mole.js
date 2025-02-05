@@ -2,6 +2,8 @@ let currMoleTile;
 let currPlantTile;
 let score = 0;
 let gameOver = false;
+let difficultySpeed = 2000;
+let moleInterval;
 
 window.onload = function () {
   setGame();
@@ -16,8 +18,19 @@ function setGame() {
   }
     
 
-  setInterval(setMole, 500);
+  startMoleInterval();
   setInterval(setPlant, 1000);
+}
+
+function startMoleInterval(){
+
+  if(moleInterval) clearInterval(moleInterval);
+  moleInterval = setInterval(setMole, difficultySpeed);
+}
+
+function setDifficulty(x){
+    difficultySpeed = x;
+    startMoleInterval();
 }
 
 function getRandomTile() {
