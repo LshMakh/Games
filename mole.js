@@ -4,7 +4,7 @@ let score = 0;
 let gameOver = false;
 let difficultySpeed = 2000;
 let moleInterval;
-
+let highscore = localStorage.getItem("highscore") || 0;
 window.onload = function () {
   setGame();
 };
@@ -83,6 +83,10 @@ function selectTile(){
         document.getElementById("score").innerText = score.toString();
     }else if(this == currPlantTile){
         gameOver = !gameOver;
-        document.getElementById("score").innerText = `GAME OVER ${score}`;
+        if(score > highscore){
+            highscore = score;
+            localStorage.setItem("highscore", highscore);
+        }
+        document.getElementById("score").innerText = `GAME OVER ${score}, HighScore: ${highscore}`;
     }
 }
